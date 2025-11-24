@@ -5,6 +5,8 @@ The system is built on a three-part architecture:
 Autonomous Capture: Automatically catalogs faces of everyone passing by.
 Target Entry (GUI): A user-friendly interface to upload specific targets (e.g., missing persons, authorized personnel) into the system.
 Live Tracker: Integrates the camera feed to flag targets, log their sightings with timestamps, and ignore non-targets.
+
+
 📂 Project Structure
 The system consists of three main executable scripts:
 test3.py (The Recorder):
@@ -28,8 +30,13 @@ This project requires Caffe Deep Learning models for accurate face detection in 
 Create a folder named models in the root directory.
 Download the following files and place them inside the models folder:
 deploy.prototxt.txt
+
 res10_300x300_ssd_iter_140000.caffemodel
+
+
 💻 Usage
+
+
 Step 1: General Population Capture (Optional)
 Run this to simply detect and save faces of anyone who walks by.
 python test3.py
@@ -37,6 +44,8 @@ python test3.py
 
 Output: Saves face crops to saved_faces/.
 Quit: Press q.
+
+
 Step 2: Add a Target Person
 Run the GUI to register a specific person you want to track.
 python INTEL.py
@@ -46,6 +55,8 @@ Click "Select Photo" to choose an image of the person from your computer.
 Enter the person's name in the text box.
 Click "Save Person".
 The system auto-crops the face and saves it to images/.
+
+
 Step 3: Start Surveillance
 Run the main tracking engine.
 python main.py
@@ -59,7 +70,11 @@ Log: Written to Target_seen (CSV file) with date and time.
 If Unknown:
 Visual Box: Red (Unknown)
 Snapshots: Every 3 seconds, a full-frame snapshot of people is saved to Different_people/.
+
+
 🛠️ Tech Stack
+
+
 Language: Python 3
 Computer Vision: OpenCV (cv2)
 Face Detection: Haar Cascades & DNN (Caffe Model)
