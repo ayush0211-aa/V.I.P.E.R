@@ -66,7 +66,7 @@ while True:
             face_gray = cv2.cvtColor(face_crop, cv2.COLOR_BGR2GRAY)     
             try:
                 id, conf = face_match.predict(face_gray)
-                if conf < 60:
+                if conf < 50:
                     name = names[id]
                     cv2.rectangle(frame, (xi,yi), (xf,yf), (0, 255, 0), 2)
                     cv2.putText(frame, f"FOUND: {name}", (xi,yi - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
